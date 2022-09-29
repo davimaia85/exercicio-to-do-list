@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only CSS do bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Listar Tarefas</title>
+</head>
+<body style="background-color: #dedede;">
+    <section class="row mt-5">
+        <div class="col-md-6 offset-md-3"><!--das 12 colunas da tela, desconsidera as 3 primeiras a esquerda e cria a tela a partir da 4a coluna tomando 6 colunas-->
+            <div class="card card-body">
+                <h2>lista de tarefas (<span id="numeros">0</span>) </h2> <!--os parenteses devem aparecer ao atualizar o formulario-->
+                <hr>
+                <form id="x" class="row" onsubmit="addTarefa()"> <!--onsubmit: enviar com enter-->
+                    <div class="col-6">
+                    <input id="input_nova_tarefa" placeholder="nova tarefa" class="form-control" type="text">
+                    </div>
+                    <div class="col-3">
+                        <select id="input_prioridade" class="form-select">
+                            <option>---prioridade---</option>
+                            <option>baixa</option>
+                            <option>media</option>
+                            <option>alta</option>
+                        </select>
+
+                    </div>
+                    <div class="col-3 d-grid">
+                    <button class="btn btn-outline-primary">pronto!</button>
+                    </div>
+                </form>
+                <hr>
+                <div id="tarefas">
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <script src="dao.js"></script> <!--a ordem de importacao deve ser obedecida devido a posicao dos dados-->
+    <script src="eventos.js"></script>
+    
+</body>
+</html>
